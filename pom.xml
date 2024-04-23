@@ -26,12 +26,19 @@
         <maven.compiler.target>17</maven.compiler.target>
 
         <log4j.version>2.23.1</log4j.version>
+        <thymeleaf.version>3.1.2.RELEASE</thymeleaf.version>
 
         <spock.version>2.4-M1-groovy-4.0</spock.version>
         <groovy.version>4.0.7</groovy.version>
     </properties>
 
     <dependencies>
+        <!-- html template generator -->
+        <dependency>
+            <groupId>org.thymeleaf</groupId>
+            <artifactId>thymeleaf</artifactId>
+            <version>${thymeleaf.version}</version>
+        </dependency>
         <!--logging-->
         <dependency>
             <groupId>org.apache.logging.log4j</groupId>
