@@ -5,18 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="00f8fdf5-016b-4623-8b2d-cce9b88a853c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/mllukasik/log/SLF4JAdapter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/mllukasik/template/Template.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/mllukasik/template/TemplateEngine.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/mllukasik/template/ThymeleafTemplateEngine.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/META-INF/services/org.slf4j.spi.SLF4JServiceProvider" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/groovy/com/mllukasik/template/TemplateEngineSpec.groovy" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/workspace/template/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/mllukasik/template/TemplateEngineConfiguration.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/groovy/com/mllukasik/tool/TemplatePathProvider.groovy" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/workspace/template/variable_test.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mllukasik/template/TemplateGenerator.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mllukasik/template/ThymeleafConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mllukasik/template/ThymeleafConfiguration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/workspace/template/.gitkeep" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mllukasik/template/Template.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mllukasik/template/Template.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mllukasik/template/TemplateEngine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mllukasik/template/TemplateEngine.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mllukasik/template/ThymeleafConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mllukasik/template/ThymeleafEngineFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mllukasik/template/ThymeleafTemplateEngine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mllukasik/template/ThymeleafTemplateEngine.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/groovy/com/mllukasik/template/TemplateEngineSpec.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/groovy/com/mllukasik/template/TemplateEngineSpec.groovy" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/workspace/template/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/workspace/template/simple.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,6 +39,7 @@
   &quot;associatedIndex&quot;: 5
 }</component>
   <component name="ProjectId" id="2fVdFpqnFgHDfac1fTJC6yfigWA" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -47,28 +47,42 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "DefaultHtmlFileTemplate": "HTML File",
+    "JUnit.StandardTestSpec.test abc.executor": "Run",
+    "JUnit.TemplateEngineSpec.executor": "Run",
+    "JUnit.TemplateEngineSpec.process template, with existing template, expect generated file.executor": "Run",
+    "JUnit.TemplateEngineSpec.process template, with variable map, expect generated file.executor": "Run",
     "JUnit.TemplateEngineSpec.simple test.executor": "Run",
+    "JUnit.TemplateTestSpec.executor": "Run",
+    "JUnit.TemplateTestSpec.simple test (1).executor": "Run",
+    "JUnit.TemplateTestSpec.simple test.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "kotlin-language-version-configured": "true"
+    "kotlin-language-version-configured": "true",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "advanced.settings"
   }
 }]]></component>
-  <component name="RunManager" selected="JUnit.TemplateEngineSpec.simple test">
-    <configuration name="BoboGenerator" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.mllukasik.BoboGenerator" />
+  <component name="RunManager" selected="JUnit.TemplateEngineSpec.process template, with variable map, expect generated file">
+    <configuration name="StandardTestSpec.test abc" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="bobo-generator" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.mllukasik.*" />
+          <option name="PATTERN" value="com.mllukasik.template.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <option name="PACKAGE_NAME" value="com.mllukasik.template" />
+      <option name="MAIN_CLASS_NAME" value="com.mllukasik.template.StandardTestSpec" />
+      <option name="METHOD_NAME" value="test abc" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TemplateEngineSpec.simple test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="TemplateEngineSpec" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="bobo-generator" />
       <extension name="coverage">
         <pattern>
@@ -78,16 +92,66 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.mllukasik.template" />
       <option name="MAIN_CLASS_NAME" value="com.mllukasik.template.TemplateEngineSpec" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TemplateEngineSpec.process template, with existing template, expect generated file" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="bobo-generator" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.mllukasik.template.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.mllukasik.template" />
+      <option name="MAIN_CLASS_NAME" value="com.mllukasik.template.TemplateEngineSpec" />
+      <option name="METHOD_NAME" value="process template, with existing template, expect generated file" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TemplateEngineSpec.process template, with variable map, expect generated file" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="bobo-generator" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.mllukasik.template.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.mllukasik.template" />
+      <option name="MAIN_CLASS_NAME" value="com.mllukasik.template.TemplateEngineSpec" />
+      <option name="METHOD_NAME" value="process template, with variable map, expect generated file" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TemplateTestSpec.simple test" type="JUnit" factoryName="JUnit" nameIsGenerated="true">
+      <module name="bobo-generator" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.mllukasik.template.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.mllukasik.template" />
+      <option name="MAIN_CLASS_NAME" value="com.mllukasik.template.TemplateTestSpec" />
       <option name="METHOD_NAME" value="simple test" />
       <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea --add-opens java.base/java.lang=ALL-UNNAMED" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.TemplateEngineSpec.simple test" />
-        <item itemvalue="Application.BoboGenerator" />
+        <item itemvalue="JUnit.TemplateEngineSpec.process template, with variable map, expect generated file" />
+        <item itemvalue="JUnit.TemplateEngineSpec" />
+        <item itemvalue="JUnit.StandardTestSpec.test abc" />
+        <item itemvalue="JUnit.TemplateEngineSpec.process template, with existing template, expect generated file" />
       </list>
     </recent_temporary>
   </component>
