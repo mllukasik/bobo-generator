@@ -15,15 +15,15 @@ class PathMarkdownProviderSpec extends Specification {
             "test": ["A", "B", "C"]
     ]
 
-    private PathMarkdownProvider pathMarkdownProvider
+    private PathMarkdownFragmentParser pathMarkdownProvider
 
     def setup() {
-        pathMarkdownProvider = new PathMarkdownProvider()
+        pathMarkdownProvider = new PathMarkdownFragmentParser()
     }
 
     def "get simple fragment, expect correct data"() {
         when:
-        var fragment = pathMarkdownProvider.fragment(TestPathProvider.pagePath("simple.md"))
+        var fragment = pathMarkdownProvider.parse(TestPathProvider.pagePath("simple.md"))
         then:
         fragment.id() == "simple"
         fragment.asParagraph() == SIMPLE_RENDER

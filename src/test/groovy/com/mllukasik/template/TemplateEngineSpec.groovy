@@ -1,5 +1,6 @@
 package com.mllukasik.template
 
+import com.mllukasik.robusta.util.Paths
 import com.mllukasik.tool.TestPathProvider
 import spock.lang.Specification
 
@@ -10,13 +11,15 @@ class TemplateEngineSpec extends Specification {
     private TemplateEngine templateEngine
 
     def setup() {
+        Paths.ensureDirectoryExists(TestPathProvider.buildPath())
         templateEngine = TemplateEngine.create()
     }
 
     def "process template, with existing template, expect generated file"() {
         var templateName = "simple.html"
         var template = Template.builder()
-                .setTemplatePath(TestPathProvider.resolveTemplate(templateName))
+                .setTemplatePath(TestPathProvider.templatePath(templateName))
+                .setBuildPath(TestPathProvider.buildPath(templateName))
                 .build()
         when:
         templateEngine.process(template)
@@ -36,7 +39,8 @@ class TemplateEngineSpec extends Specification {
                 ]
         ]
         var template = Template.builder()
-                .setTemplatePath(TestPathProvider.resolveTemplate(templateName))
+                .setTemplatePath(TestPathProvider.templatePath(templateName))
+                .setBuildPath(TestPathProvider.buildPath(templateName))
                 .setVariables(variables)
                 .build()
         when:

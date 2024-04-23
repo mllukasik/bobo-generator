@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<span>index page</span>
+<h1>Fragments</h1>
+<th:block th:each="fragment : ${fragments}">
+    <li>
+        <span th:text="${fragment.id}"></span>
+    </li>
+</th:block>
+</body>
+</html>
