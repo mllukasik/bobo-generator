@@ -1,6 +1,6 @@
 package com.mllukasik.template
 
-import com.mllukasik.tool.TemplatePathProvider
+import com.mllukasik.tool.TestPathProvider
 import spock.lang.Specification
 
 import java.nio.file.Files
@@ -16,12 +16,12 @@ class TemplateEngineSpec extends Specification {
     def "process template, with existing template, expect generated file"() {
         var templateName = "simple.html"
         var template = Template.builder()
-                .setTemplatePath(TemplatePathProvider.resolveAsString(templateName))
+                .setTemplatePath(TestPathProvider.resolveTemplate(templateName))
                 .build()
         when:
         templateEngine.process(template)
         then:
-        Files.exists(TemplatePathProvider.buildPath(templateName))
+        Files.exists(TestPathProvider.buildPath(templateName))
     }
 
     def "process template, with variable map, expect generated file"() {
@@ -36,13 +36,13 @@ class TemplateEngineSpec extends Specification {
                 ]
         ]
         var template = Template.builder()
-                .setTemplatePath(TemplatePathProvider.resolveAsString(templateName))
+                .setTemplatePath(TestPathProvider.resolveTemplate(templateName))
                 .setVariables(variables)
                 .build()
         when:
         templateEngine.process(template)
         then:
-        Files.exists(TemplatePathProvider.buildPath(templateName))
-        TemplatePathProvider.buildPath(templateName).toFile().getText().contains(testValue)
+        Files.exists(TestPathProvider.buildPath(templateName))
+        TestPathProvider.buildPath(templateName).toFile().getText().contains(testValue)
     }
 }

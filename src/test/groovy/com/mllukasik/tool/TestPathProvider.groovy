@@ -2,18 +2,23 @@ package com.mllukasik.tool
 
 import java.nio.file.Path
 
-final class TemplatePathProvider {
+final class TestPathProvider {
 
-    private TemplatePathProvider() {
+    private TestPathProvider() {
 
     }
 
     private static Path WORKSPACE_PATH = Path.of("workspace")
     private static Path TEMPLATE_PATH = WORKSPACE_PATH.resolve("template")
+    private static Path PAGES_PATH = WORKSPACE_PATH.resolve("pages")
     private static Path BUILD_PATH = Path.of("build")
 
-    static String resolveAsString(String other) {
+    static String resolveTemplate(String other) {
         TEMPLATE_PATH.resolve(other)
+    }
+
+    static Path pagePath(String pageName) {
+        PAGES_PATH.resolve(pageName)
     }
 
     static Path buildPath(String templateName) {

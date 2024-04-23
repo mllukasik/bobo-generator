@@ -2,8 +2,8 @@ target/
 build/
 
 !.mvn/wrapper/maven-wrapper.jar
-!**/src/main/**/target/
-!**/src/test/**/target/
+!workspace/pages/main/**/target/
+!workspace/pages/test/**/target/
 
 ### IntelliJ IDEA ###
 .idea

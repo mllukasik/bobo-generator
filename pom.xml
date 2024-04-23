@@ -27,6 +27,7 @@
 
         <log4j.version>2.23.1</log4j.version>
         <thymeleaf.version>3.1.2.RELEASE</thymeleaf.version>
+        <commonmark.versiom>0.21.0</commonmark.versiom>
 
         <spock.version>2.4-M1-groovy-4.0</spock.version>
         <groovy.version>4.0.7</groovy.version>
@@ -38,6 +39,17 @@
             <groupId>org.thymeleaf</groupId>
             <artifactId>thymeleaf</artifactId>
             <version>${thymeleaf.version}</version>
+        </dependency>
+        <!-- Markdown parser-->
+        <dependency>
+            <groupId>org.commonmark</groupId>
+            <artifactId>commonmark</artifactId>
+            <version>${commonmark.versiom}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.commonmark</groupId>
+            <artifactId>commonmark-ext-yaml-front-matter</artifactId>
+            <version>${commonmark.versiom}</version>
         </dependency>
         <!--logging-->
         <dependency>
@@ -54,7 +66,7 @@
         <dependency>
             <groupId>com.mllukasik</groupId>
             <artifactId>robusta</artifactId>
-            <version>1.0.0</version>
+            <version>1.0.1-SNAPSHOT</version>
         </dependency>
         <!-- tests -->
         <!-- spock framework -->
