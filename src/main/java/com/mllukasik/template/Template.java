@@ -4,7 +4,7 @@ import java.util.Collections;
 import java.util.Map;
 import java.util.Optional;
 
-public class Template {
+public final class Template {
 
     private final String templatePath;
     private final Map<String, Object> variables;

@@ -1,5 +1,6 @@
 package com.mllukasik.template;
 
+import com.mllukasik.template.exception.TemplateEngineException;
 import org.thymeleaf.templatemode.TemplateMode;
 import org.thymeleaf.templateresolver.FileTemplateResolver;
 
@@ -26,8 +27,8 @@ final class ThymeleafEngineFactory {
     public TemplateEngine create() {
         try {
             ensureBuildPathExists();
-        } catch (IOException ex) {
-            throw new RuntimeException(ex);
+        } catch (IOException exception) {
+            throw new TemplateEngineException(exception);
         }
         return new ThymeleafTemplateEngine(templateEngine(), configuration);
     }
