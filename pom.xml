@@ -32,6 +32,12 @@
     </properties>
 
     <dependencies>
+        <!-- html template generator -->
+        <dependency>
+            <groupId>org.thymeleaf</groupId>
+            <artifactId>thymeleaf</artifactId>
+            <version>3.1.2.RELEASE</version>
+        </dependency>
         <!--logging-->
         <dependency>
             <groupId>org.apache.logging.log4j</groupId>
