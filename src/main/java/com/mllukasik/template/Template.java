@@ -1,19 +1,47 @@
 package com.mllukasik.template;
 
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.Writer;
-import java.nio.file.Path;
+import java.util.Collections;
+import java.util.Map;
+import java.util.Optional;
 
-public record Template(
+public class Template {
 
-        String templatePath,
-        Writer writer
-) {
+    private final String templatePath;
+    private final Map<String, Object> variables;
 
-    public static Template fromTemplatePath(String templatePath) throws IOException {
-        var fileName = Path.of(templatePath).getFileName().toString();
-        var buildPath = Path.of("build", fileName);
-        return new Template(templatePath, new FileWriter(buildPath.toFile()));
+    private Template(String templatePath, Map<String, Object> variables) {
+        this.templatePath = templatePath;
+        this.variables = variables;
+    }
+
+    public String templatePath() {
+        return templatePath;
+    }
+
+    public Map<String, Object> variables() {
+        return Optional.ofNullable(variables).orElseGet(Collections::emptyMap);
+    }
+
+    public static TemplateBuilder builder() {
+        return new TemplateBuilder();
+    }
+
+    public static class TemplateBuilder {
+        private String templatePath;
+        private Map<String, Object> variables;
+
+        public TemplateBuilder setTemplatePath(String templatePath) {
+            this.templatePath = templatePath;
+            return this;
+        }
+
+        public TemplateBuilder setVariables(Map<String, Object> variables) {
+            this.variables = variables;
+            return this;
+        }
+
+        public Template build() {
+            return new Template(templatePath, variables);
+        }
     }
 }
