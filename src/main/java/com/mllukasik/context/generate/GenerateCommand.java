@@ -3,7 +3,14 @@ package com.mllukasik.context.generate;
 import java.nio.file.Path;
 import java.util.Optional;
 
-public record GenerateCommand(Path workspace, Path pages, Path pageTemplate, Path build) {
+public record GenerateCommand(
+
+        Path workspace,
+        Path pages,
+        boolean skipPagesGeneration,
+        Path pageTemplate,
+        Path build
+) {
 
     public GenerateCommand {
         workspace = Optional.ofNullable(workspace).orElse(Path.of("."));
@@ -19,6 +26,7 @@ public record GenerateCommand(Path workspace, Path pages, Path pageTemplate, Pat
     public static class GenerateCommandBuilder {
         private Path workspace;
         private Path pages;
+        boolean skipPagesGeneration;
         private Path pageTemplate;
         private Path build;
 
@@ -35,6 +43,11 @@ public record GenerateCommand(Path workspace, Path pages, Path pageTemplate, Pat
             return this;
         }
 
+        public GenerateCommandBuilder setSkipPagesGeneration(boolean skipPagesGeneration) {
+            this.skipPagesGeneration = skipPagesGeneration;
+            return this;
+        }
+
         public GenerateCommandBuilder setPageTemplate(Path pageTemplate) {
             this.pageTemplate = pageTemplate;
             return this;
@@ -46,7 +59,8 @@ public record GenerateCommand(Path workspace, Path pages, Path pageTemplate, Pat
         }
 
         public GenerateCommand build() {
-            return new GenerateCommand(workspace, pages, pageTemplate, build);
+            return new GenerateCommand(workspace, pages, skipPagesGeneration,
+                    pageTemplate, build);
         }
     }
 }
