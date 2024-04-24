@@ -1,9 +1,7 @@
 name: Docker image publish
 
 on:
-  workflow_dispatch:
-  release:
-    types: [created]
+  workflow_dispatch
 
 env:
   REGISTRY: ghcr.io
