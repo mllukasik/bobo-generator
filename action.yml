@@ -33,3 +33,4 @@ runs:
     - ${{ inputs.pageTemplate }}
     - -o
     - ${{ inputs.build }}
+    - ${{ inputs.skipPagesGeneration == "false" && '--skipPagesGeneration' || ''}}
