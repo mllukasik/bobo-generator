@@ -2,6 +2,7 @@ package com.mllukasik.fragment.markdown;
 
 import com.mllukasik.fragment.Fragment;
 
+import java.nio.file.Path;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
@@ -11,10 +12,12 @@ class MarkdownFragment implements Fragment {
     private final String content;
     private final Map<String, List<String>> metaData;
     private final String id;
+    private final Path path;
 
-    MarkdownFragment(String content, Map<String, List<String>> metaData, String id) {
+    MarkdownFragment(String content, Map<String, List<String>> metaData, Path path, String id) {
         this.content = content;
         this.metaData = metaData;
+        this.path = path;
         this.id = id;
     }
 
@@ -26,6 +29,11 @@ class MarkdownFragment implements Fragment {
     @Override
     public String id() {
         return id;
+    }
+
+    @Override
+    public Path path() {
+        return path;
     }
 
     @Override

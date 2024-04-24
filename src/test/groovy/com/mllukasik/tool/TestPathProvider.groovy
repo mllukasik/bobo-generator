@@ -13,15 +13,23 @@ final class TestPathProvider {
     private static Path PAGES_PATH = WORKSPACE_PATH.resolve("pages")
     private static Path BUILD_PATH = Path.of("build")
 
-    static String resolveTemplate(String other) {
-        TEMPLATE_PATH.resolve(other)
+    static Path workspacePath(String path) {
+        return WORKSPACE_PATH.resolve(path)
+    }
+
+    static Path templatePath(String template) {
+        TEMPLATE_PATH.resolve(template)
     }
 
     static Path pagePath(String pageName) {
         PAGES_PATH.resolve(pageName)
     }
 
-    static Path buildPath(String templateName) {
-        BUILD_PATH.resolve(templateName)
+    static Path buildPath() {
+        BUILD_PATH
+    }
+
+    static Path buildPath(String template) {
+        BUILD_PATH.resolve(template)
     }
 }

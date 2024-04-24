@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title th:text="${metadata.title}"></title>
+</head>
+<body>
+<div class="page-fragment-content" th:utext="${fragment_content}">
+</div>
+<h1>Test meta data</h1>
+<ul>
+    <th:block th:each="element : ${metadata.test}">
+        <li>
+            <span th:text="${element}"></span>
+        </li>
+    </th:block>
+</ul>
+<p>
+    <span th:text="${test}"></span>
+</p>
+</body>
+</html>

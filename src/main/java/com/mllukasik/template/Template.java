@@ -1,21 +1,28 @@
 package com.mllukasik.template;
 
+import java.nio.file.Path;
 import java.util.Collections;
 import java.util.Map;
 import java.util.Optional;
 
 public final class Template {
 
-    private final String templatePath;
+    private final Path templatePath;
+    private final Path buildPath;
     private final Map<String, Object> variables;
 
-    private Template(String templatePath, Map<String, Object> variables) {
+    private Template(Path templatePath, Path buildPath, Map<String, Object> variables) {
         this.templatePath = templatePath;
+        this.buildPath = buildPath;
         this.variables = variables;
     }
 
-    public String templatePath() {
+    public Path templatePath() {
         return templatePath;
+    }
+
+    public Path buildPath() {
+        return buildPath;
     }
 
     public Map<String, Object> variables() {
@@ -27,10 +34,11 @@ public final class Template {
     }
 
     public static class TemplateBuilder {
-        private String templatePath;
+        private Path templatePath;
         private Map<String, Object> variables;
+        private Path buildPath;
 
-        public TemplateBuilder setTemplatePath(String templatePath) {
+        public TemplateBuilder setTemplatePath(Path templatePath) {
             this.templatePath = templatePath;
             return this;
         }
@@ -40,8 +48,13 @@ public final class Template {
             return this;
         }
 
+        public TemplateBuilder setBuildPath(Path buildPath) {
+            this.buildPath = buildPath;
+            return this;
+        }
+
         public Template build() {
-            return new Template(templatePath, variables);
+            return new Template(templatePath, buildPath, variables);
         }
     }
 }
