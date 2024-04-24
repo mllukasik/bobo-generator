@@ -13,6 +13,10 @@ inputs:
     description: 'page template path'
     required: false
     default: "src/_page_template.html"
+  skipPagesGeneration:
+    description: 'skips page generation process'
+    required: false
+    default: "false"
   build:
     description: 'build path'
     required: false
