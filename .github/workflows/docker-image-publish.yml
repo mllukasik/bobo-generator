@@ -26,7 +26,7 @@ jobs:
         settings-path: ${{ github.workspace }}
 
     - name: Build with Maven
-      run: mvn -B package --file pom.xml -s .github/workflows/settings.xml
+      run: mvn -s $GITHUB_WORKSPACE/.github/workflows/maven-settings.xml -B package --file pom.xml
       env:
         GITHUB_TOKEN: ${{ github.token }}
         ACTOR_NAME: ${{ github.actor }}
