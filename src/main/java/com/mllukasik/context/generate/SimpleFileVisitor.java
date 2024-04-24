@@ -37,7 +37,7 @@ class SimpleFileVisitor implements FileVisitor<Path> {
 
     @Override
     public FileVisitResult visitFileFailed(Path file, IOException exc) throws IOException {
-        throw new IOException("File visit failed", exc);
+        throw new IOException("File visit failed, path + " + file.toString(), exc);
     }
 
     @Override

@@ -5,10 +5,10 @@ import spock.lang.Specification
 
 class PathMarkdownProviderSpec extends Specification {
 
-    private static final SIMPLE_RENDER = """<a id="simple"><h1>HEADER 1</h1>
+    private static final SIMPLE_RENDER = """<p id="simple"><h1>HEADER 1</h1>
 <h2>HEADER 2</h2>
 <p>text</p>
-</a>"""
+</p>"""
 
     private static final SIMPLE_VARIABLES = [
             "title": "Simple page",
@@ -27,6 +27,6 @@ class PathMarkdownProviderSpec extends Specification {
         then:
         fragment.id() == "simple"
         fragment.asParagraph() == SIMPLE_RENDER
-        fragment.variables() == SIMPLE_VARIABLES
+        fragment.metadata() == SIMPLE_VARIABLES
     }
 }

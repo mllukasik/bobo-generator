@@ -11,5 +11,5 @@ public interface Fragment {
 
     Path path();
 
-    Map<String, Object> variables();
+    Map<String, Object> metadata();
 }

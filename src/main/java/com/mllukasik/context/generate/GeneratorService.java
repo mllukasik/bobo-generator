@@ -51,7 +51,9 @@ class GeneratorService {
         } catch (IOException exception) {
             LOGGER.error(exception);
         }
-
+        if (command.skipPagesGeneration()) {
+            return;
+        }
         for (var fragment : fragments) {
             var buildPath = command.workspace().relativize(fragment.path());
             var template = createTemplate(
@@ -112,7 +114,7 @@ class GeneratorService {
 
     private Map<String, Object> getVariables(List<Fragment> fragments, Fragment fragment) {
         var map = getVariables(fragments);
-        map.put("metadata", fragment.variables());
+        map.put("metadata", fragment.metadata());
         return map;
     }
 }

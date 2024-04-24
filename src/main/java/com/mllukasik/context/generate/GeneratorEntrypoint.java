@@ -15,6 +15,9 @@ public class GeneratorEntrypoint implements Callable<Integer> {
     @Option(names = {"-p", "--pages"}, description = "pages path")
     private Path pages;
 
+    @Option(names = "--skip-pages-generation", description = "skips page generation process")
+    boolean skipPagesGeneration;
+
     @Option(names = {"-t", "--page-template"}, description = "page template path")
     private Path pageTemplate;
 
@@ -28,6 +31,7 @@ public class GeneratorEntrypoint implements Callable<Integer> {
         var command = GenerateCommand.builder()
                 .setWorkspace(workspace)
                 .setPages(pages)
+                .setSkipPagesGeneration(skipPagesGeneration)
                 .setPageTemplate(pageTemplate)
                 .setBuild(build)
                 .build();

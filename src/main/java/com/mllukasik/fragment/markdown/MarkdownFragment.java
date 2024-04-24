@@ -10,20 +10,20 @@ import java.util.Map;
 class MarkdownFragment implements Fragment {
 
     private final String content;
-    private final Map<String, List<String>> metaData;
+    private final Map<String, Object> metaData;
     private final String id;
     private final Path path;
 
     MarkdownFragment(String content, Map<String, List<String>> metaData, Path path, String id) {
         this.content = content;
-        this.metaData = metaData;
+        this.metaData = parseMetaData(metaData);
         this.path = path;
         this.id = id;
     }
 
     @Override
     public String asParagraph() {
-        return "<a id=\"" + id + "\">" + content + "</a>";
+        return "<p id=\"" + id + "\">" + content + "</p>";
     }
 
     @Override
@@ -37,11 +37,11 @@ class MarkdownFragment implements Fragment {
     }
 
     @Override
-    public Map<String, Object> variables() {
-        return parseMetaData();
+    public Map<String, Object> metadata() {
+        return metaData;
     }
 
-    private Map<String, Object> parseMetaData() {
+    private Map<String, Object> parseMetaData(Map<String, List<String>> metaData) {
         var map = new LinkedHashMap<String, Object>();
         for (var entry : metaData.entrySet()) {
             if (isSingleElement(entry.getValue())) {
