@@ -1,0 +1,31 @@
+name: 'Bobo generator'
+description: 'markdown to html generator'
+inputs:
+  workspace:
+    description: 'workspace path'
+    required: false
+    default: "src"
+  pages:
+    description: 'pages path - default: ${workspace}/pages'
+    required: false
+    default: "src/pages"
+  pageTemplate:
+    description: 'page template path'
+    required: false
+    default: "src/_page_template.html"
+  build:
+    description: 'build path'
+    required: false
+    default: "build"
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - -w
+    - ${{ inputs.workspace }}
+    - -p
+    - ${{ inputs.pages }}
+    - -t
+    - ${{ inputs.pageTemplate }}
+    - -o
+    - ${{ inputs.build }}

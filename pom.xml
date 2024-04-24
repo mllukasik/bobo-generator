@@ -6,7 +6,7 @@
 
     <groupId>com.mllukasik</groupId>
     <artifactId>bobo-generator</artifactId>
-    <version>1.0.0-SNAPSHOT</version>
+    <version>1.0.0</version>
 
     <repositories>
         <repository>
@@ -72,7 +72,7 @@
         <dependency>
             <groupId>com.mllukasik</groupId>
             <artifactId>robusta</artifactId>
-            <version>1.0.1-SNAPSHOT</version>
+            <version>1.0.1</version>
         </dependency>
         <!-- tests -->
         <!-- spock framework -->
