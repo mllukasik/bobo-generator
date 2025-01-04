@@ -4,7 +4,7 @@
 
     <groupId>com.mllukasik</groupId>
     <artifactId>bobo-generator</artifactId>
-    <version>1.0.3-SNAPSHOT</version>
+    <version>1.0.3</version>
 
     <repositories>
         <repository>
@@ -20,7 +20,7 @@
     <scm>
         <connection>scm:git:git@github.com:mllukasik/bobo-generator.git</connection>
         <url>https://github.com/mllukasik/bobo-generator</url>
-        <tag>HEAD</tag>
+        <tag>v1.0.3</tag>
     </scm>
 
     <properties>
