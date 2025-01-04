@@ -23,7 +23,7 @@ public record GenerateCommand(
         return new GenerateCommandBuilder();
     }
 
-    public static class GenerateCommandBuilder {
+    public static final class GenerateCommandBuilder {
         private Path workspace;
         private Path pages;
         boolean skipPagesGeneration;
