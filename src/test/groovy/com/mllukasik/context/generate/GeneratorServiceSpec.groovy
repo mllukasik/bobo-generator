@@ -14,7 +14,7 @@ class GeneratorServiceSpec extends Specification {
     }
 
     def "execute command, expect all files processed"() {
-        var command = GenerateCommand.builder()
+        def command = GenerateCommand.builder()
                 .setWorkspace(TestPathProvider.workspacePath("src"))
                 .build()
         when:
