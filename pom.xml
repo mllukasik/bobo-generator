@@ -19,11 +19,17 @@
         </repository>
     </repositories>
 
+    <scm>
+        <connection>scm:git:git@github.com:mllukasik/bobo-generator.git</connection>
+        <url>https://github.com/mllukasik/bobo-generator</url>
+        <tag>HEAD</tag>
+    </scm>
+
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <java.version>17</java.version>
-        <maven.compiler.source>17</maven.compiler.source>
-        <maven.compiler.target>17</maven.compiler.target>
+        <maven.compiler.source>${java.version}</maven.compiler.source>
+        <maven.compiler.target>${java.version}</maven.compiler.target>
 
         <log4j.version>2.23.1</log4j.version>
         <thymeleaf.version>3.1.2.RELEASE</thymeleaf.version>
