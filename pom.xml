@@ -33,7 +33,7 @@
 
         <slf4j.version>2.0.16</slf4j.version>
         <thymeleaf.version>3.1.2.RELEASE</thymeleaf.version>
-        <commonmark.versiom>0.21.0</commonmark.versiom>
+        <commonmark.versiom>0.24.0</commonmark.versiom>
 
         <spock.version>2.4-M1-groovy-4.0</spock.version>
         <groovy.version>4.0.7</groovy.version>
@@ -61,6 +61,11 @@
         <dependency>
             <groupId>org.commonmark</groupId>
             <artifactId>commonmark-ext-yaml-front-matter</artifactId>
+            <version>${commonmark.versiom}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.commonmark</groupId>
+            <artifactId>commonmark-ext-gfm-tables</artifactId>
             <version>${commonmark.versiom}</version>
         </dependency>
         <!--logging-->

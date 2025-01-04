@@ -23,5 +23,10 @@ class GeneratorServiceSpec extends Specification {
         Files.exists(TestPathProvider.buildPath("index.html"))
         Files.exists(TestPathProvider.buildPath("pages/simple.html"))
         Files.exists(TestPathProvider.buildPath("static/style.css"))
+
+        var table = TestPathProvider.buildPath("pages/table.html")
+        Files.exists(table)
+        var value = Files.readAllLines(table).join("\n")
+        value.contains("table")
     }
 }

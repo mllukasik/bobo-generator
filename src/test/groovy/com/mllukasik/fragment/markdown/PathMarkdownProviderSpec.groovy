@@ -26,7 +26,7 @@ class PathMarkdownProviderSpec extends Specification {
         var fragment = pathMarkdownProvider.parse(TestPathProvider.pagePath("simple.md"))
         then:
         fragment.id() == "simple"
-        fragment.asParagraph() == SIMPLE_RENDER
+        fragment.content() == SIMPLE_RENDER
         fragment.metadata() == SIMPLE_VARIABLES
     }
 }

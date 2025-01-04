@@ -115,6 +115,7 @@ class GeneratorService {
     private Map<String, Object> getVariables(List<Fragment> fragments, Fragment fragment) {
         var map = getVariables(fragments);
         map.put("metadata", fragment.metadata());
+        map.put("fragment_content", fragment.content());
         return map;
     }
 }

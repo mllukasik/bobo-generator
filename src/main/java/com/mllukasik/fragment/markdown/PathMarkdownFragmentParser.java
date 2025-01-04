@@ -5,6 +5,7 @@ import com.mllukasik.fragment.exception.FragmentParserException;
 import com.mllukasik.robusta.util.Paths;
 import org.commonmark.ext.front.matter.YamlFrontMatterExtension;
 import org.commonmark.ext.front.matter.YamlFrontMatterVisitor;
+import org.commonmark.ext.gfm.tables.TablesExtension;
 import org.commonmark.node.Node;
 import org.commonmark.parser.Parser;
 import org.commonmark.renderer.html.HtmlRenderer;
@@ -20,8 +21,10 @@ public class PathMarkdownFragmentParser {
     private final HtmlRenderer renderer;
 
     public PathMarkdownFragmentParser() {
-        parser = Parser.builder().extensions(List.of(YamlFrontMatterExtension.create())).build();
-        renderer = HtmlRenderer.builder().build();
+        var extensions = List.of(YamlFrontMatterExtension.create(),
+                TablesExtension.create());
+        parser = Parser.builder().extensions(extensions).build();
+        renderer = HtmlRenderer.builder().extensions(List.of(TablesExtension.create())).build();
     }
 
     public Fragment parse(Path path) {
