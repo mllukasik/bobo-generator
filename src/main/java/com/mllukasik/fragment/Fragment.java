@@ -5,7 +5,7 @@ import java.util.Map;
 
 public interface Fragment {
 
-    String asParagraph();
+    String content();
 
     String id();
 

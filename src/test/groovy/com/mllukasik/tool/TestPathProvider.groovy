@@ -10,8 +10,12 @@ final class TestPathProvider {
 
     private static Path WORKSPACE_PATH = Path.of("workspace")
     private static Path TEMPLATE_PATH = WORKSPACE_PATH.resolve("template")
-    private static Path PAGES_PATH = WORKSPACE_PATH.resolve("pages")
+    private static Path PAGES_PATH = WORKSPACE_PATH.resolve("src").resolve("pages")
     private static Path BUILD_PATH = Path.of("build")
+
+    static Path workspacePath() {
+        return WORKSPACE_PATH
+    }
 
     static Path workspacePath(String path) {
         return WORKSPACE_PATH.resolve(path)

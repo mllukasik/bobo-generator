@@ -22,8 +22,8 @@ class MarkdownFragment implements Fragment {
     }
 
     @Override
-    public String asParagraph() {
-        return "<p id=\"" + id + "\">" + content + "</p>";
+    public String content() {
+        return "<div id=\"" + id + "\">" + content + "</div>";
     }
 
     @Override
