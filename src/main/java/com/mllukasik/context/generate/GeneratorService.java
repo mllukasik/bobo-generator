@@ -5,8 +5,8 @@ import com.mllukasik.fragment.FragmentParser;
 import com.mllukasik.robusta.util.Paths;
 import com.mllukasik.template.Template;
 import com.mllukasik.template.TemplateEngine;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -19,7 +19,7 @@ import java.util.Map;
 class GeneratorService {
 
     private static final String HTML_EXT = ".html";
-    private static final Logger LOGGER = LogManager.getLogger(GeneratorService.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(GeneratorService.class);
 
     private final TemplateEngine templateEngine;
     private final FragmentParser fragmentParser;
@@ -34,8 +34,8 @@ class GeneratorService {
         var visitor = new SimpleFileVisitor((f) -> fragments.add(fragmentParser.parse(f)));
         try {
             Files.walkFileTree(command.pages(), visitor);
-        } catch (IOException exception) {
-            LOGGER.error(exception);
+        } catch (IOException ex) {
+            LOGGER.error("Could not read page", ex);
         }
         execute(command, fragments);
     }
@@ -48,8 +48,8 @@ class GeneratorService {
         );
         try {
             Files.walkFileTree(command.workspace(), visitor);
-        } catch (IOException exception) {
-            LOGGER.error(exception);
+        } catch (IOException ex) {
+            LOGGER.error("Could not generate fragment", ex);
         }
         if (command.skipPagesGeneration()) {
             return;
@@ -83,16 +83,16 @@ class GeneratorService {
         try {
             Paths.ensureDirectoryExists(destination.getParent());
             Files.copy(path, destination);
-        } catch (IOException exception) {
-            LOGGER.error(exception);
+        } catch (IOException ex) {
+            LOGGER.error("Could not copy file", ex);
         }
     }
 
     private void processTemplate(Template template) {
         try {
             templateEngine.process(template);
-        } catch (IOException exception) {
-            LOGGER.error(exception);
+        } catch (IOException ex) {
+            LOGGER.error("Could not process template", ex);
         }
 
     }
