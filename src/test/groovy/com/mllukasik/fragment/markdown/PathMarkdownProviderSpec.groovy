@@ -5,10 +5,10 @@ import spock.lang.Specification
 
 class PathMarkdownProviderSpec extends Specification {
 
-    private static final SIMPLE_RENDER = """<p id="simple"><h1>HEADER 1</h1>
+    private static final SIMPLE_RENDER = """<div id="simple"><h1>HEADER 1</h1>
 <h2>HEADER 2</h2>
 <p>text</p>
-</p>"""
+</div>"""
 
     private static final SIMPLE_VARIABLES = [
             "title": "Simple page",
