@@ -12,7 +12,7 @@ class SimpleFileVisitor implements FileVisitor<Path> {
     private final Consumer<Path> pathConsumer;
     private final Predicate<Path> pathPredicate;
 
-    public SimpleFileVisitor(Consumer<Path> pathConsumer) {
+    SimpleFileVisitor(Consumer<Path> pathConsumer) {
         this(pathConsumer, (p) -> true);
     }
 

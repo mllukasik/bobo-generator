@@ -11,7 +11,7 @@ final class ThymeleafTemplateEngine implements TemplateEngine {
 
     private final org.thymeleaf.TemplateEngine templateEngine;
 
-    public ThymeleafTemplateEngine(org.thymeleaf.TemplateEngine templateEngine) {
+    ThymeleafTemplateEngine(org.thymeleaf.TemplateEngine templateEngine) {
         this.templateEngine = templateEngine;
     }
 
